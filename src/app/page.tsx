@@ -254,7 +254,7 @@ function WhyChooseUsCards() {
       image: "/pen_target.png",
       title: "Course-Specific Tutors",
       description:
-        "Find peers who&apos;ve taken your exact class - same professor, same assignments",
+        "Find peers who have taken your exact class - same professor, same assignments",
     },
     {
       image: "/paper_checkmark.png",
