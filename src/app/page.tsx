@@ -125,18 +125,18 @@ const MainContentText = ({ isMobile }: { isMobile: boolean }) => (
     {
       !isMobile ? (
       <h1 className="text-[#FFFBEA] font-outfit sm:text-[40px] text-[56px] font-bold leading-[125%] min-w-[572px]">
-        Get Help From Peers Who've Mastered Your Course
+        Get Help From Peers Who&apos;ve Mastered Your Course
       </h1>
     ) : (
       <h1 className="text-[#FFFBEA] font-outfit sm:text-[40px] text-[56px] font-bold leading-[125%] w-full">
-        Get Help From Peers Who've Mastered Your Course
+        Get Help From Peers Who&apos;ve Mastered Your Course
       </h1>
     )
     }
     <div className={poppins.variable}>
       <p className="text-white text-[20px] leading-[150%]">
         Connect with verified tutors from your campus who have excelled in the
-        courses you're taking.
+        courses you&apos;re taking.
       </p>
     </div>
     <div className={poppins.variable}>
@@ -222,7 +222,7 @@ function HowItWorksCards() {
             3. Get Help and Succeed
           </h3>
           <p className="text-black text-center">
-            Meet with your tutor, learn from a peer who's mastered the course,
+            Meet with your tutor, learn from a peer who&apos;s mastered the course,
             and ace your classes.
           </p>
         </div>
@@ -237,7 +237,7 @@ function WhyChooseUsCards() {
       image: "/pen_target.png",
       title: "Course-Specific Tutors",
       description:
-        "Find peers who've taken your exact class - same professor, same assignments",
+        "Find peers who&apos;ve taken your exact class - same professor, same assignments",
     },
     {
       image: "/paper_checkmark.png",
