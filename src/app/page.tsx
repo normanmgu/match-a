@@ -22,7 +22,7 @@ interface ScreenProps {
 
 const FirstScreen = ({ children }: ScreenProps) => {
   return (
-    <div className="w-screen h-screen bg-[#479F47] relative z-0">
+    <div className="w-screen min-h-screen bg-[#479F47] relative z-0">
       <div className="absolute top-[80%] left-[48%] -translate-x-1/2 -translate-y-1/2 z-10">
         <Image
           height={251}
@@ -45,7 +45,7 @@ const FirstScreen = ({ children }: ScreenProps) => {
         <BottomGreenSVG />
       </div>
       {/* Content Layer */}
-      <div className="absolute inset-0 z-20">{children}</div>
+      <div className="absolute inset-0 z-20 flex items-center">{children}</div>
     </div>
   );
 };
