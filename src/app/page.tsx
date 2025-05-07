@@ -68,7 +68,7 @@ const ThirdScreen = ({ children }: ScreenProps) => {
   );
 };
 
-const Footer = ({ children }: ScreenProps) => {
+const Footer = () => {
   return (
     <div className="w-screen h-[22.625rem] bg-white relative">
       {/* Content Layer */}
@@ -89,7 +89,6 @@ const Footer = ({ children }: ScreenProps) => {
             </a>
           </div>
         </div>
-        {children}
       </div>
     </div>
   );
@@ -328,9 +327,17 @@ function ReadyToGetStarted({ isMobile }: { isMobile: boolean }) {
         />
       )}
       <div className="flex flex-col gap-y-8 items-center justify-center">
-        <h1 className="text-white text-4xl font-bold text-center">
-          Ready to crush your next exam or earn tutoring money?
-        </h1>
+        {
+          !isMobile ? (
+            <h1 className="text-white text-4xl font-bold text-center ">
+              Ready to crush your next exam or earn tutoring money?
+            </h1>
+          ) : (
+            <h1 className="text-white text-3xl font-bold text-center mt-20">
+              Ready to crush your next exam or earn tutoring money?
+            </h1>
+          )
+        }
         <a href="#top">
           <Button className="text-[18px] w-[245px] h-12 flex-shrink-0 rounded-[28px] bg-[#236922] shadow-[inset_0px_4px_16px_0px_rgba(0,0,0,0.10)]">
             Sign Up
@@ -398,9 +405,7 @@ export default function Home() {
       <ThirdScreen>
         <ReadyToGetStarted isMobile={isMobile} />
       </ThirdScreen>
-      <Footer>
-        <h1 className="text-black text-4xl font-bold">Footer Content</h1>
-      </Footer>
+      <Footer/>
     </main>
   );
 }
