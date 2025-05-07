@@ -23,7 +23,7 @@ interface ScreenProps {
 const FirstScreen = ({ children }: ScreenProps) => {
   return (
     <div className="w-screen h-screen bg-[#479F47] relative z-0">
-      <div className="absolute top-[70%] left-[48%] -translate-x-1/2 -translate-y-1/2 z-10">
+      <div className="absolute top-[80%] left-[48%] -translate-x-1/2 -translate-y-1/2 z-10">
         <Image
           height={251}
           width={285.59}
@@ -41,7 +41,7 @@ const FirstScreen = ({ children }: ScreenProps) => {
           className="w-[16.875rem] h-[24.3125rem] flex-shrink-0 aspect-[430/709]"
         />
       </div>
-      <div className="absolute bottom-0 w-full h-[11.06rem] overflow-hidden z-10">
+      <div className="absolute bottom-0 w-full h-[16.06rem] overflow-hidden z-10">
         <BottomGreenSVG />
       </div>
       {/* Content Layer */}
@@ -72,7 +72,25 @@ const Footer = ({ children }: ScreenProps) => {
   return (
     <div className="w-screen h-[22.625rem] bg-white relative">
       {/* Content Layer */}
-      <div className="absolute inset-0 z-20">{children}</div>
+      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center">
+        <div className="text-center mb-8">
+          <h1 className="text-black text-4xl font-bold mb-4">Contact Us</h1>
+          <div className="flex flex-col gap-2">
+            <a href="mailto:ychoudhary@ucdavis.edu" className="text-[#76B551] hover:text-[#479F47] transition-colors">
+            ychoudhary@ucdavis.edu
+            </a>
+            <a 
+              href="https://instagram.com/matcha_tutor" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[#76B551] hover:text-[#479F47] transition-colors"
+            >
+              @matcha_tutor
+            </a>
+          </div>
+        </div>
+        {children}
+      </div>
     </div>
   );
 };
@@ -121,17 +139,17 @@ const MainContentImages = () => (
 );
 
 const MainContentText = ({ isMobile }: { isMobile: boolean }) => (
-  <div className="flex flex-col justify-center left-[100px] gap-y-8">
+  <div className={`flex flex-col justify-center px-4 gap-y-4 ${isMobile ? "mr-20" : ""}`}>
     {
       !isMobile ? (
-      <h1 className="text-[#FFFBEA] font-outfit sm:text-[40px] text-[56px] font-bold leading-[125%] min-w-[572px]">
-        Get Help From Peers Who&apos;ve Mastered Your Course
-      </h1>
-    ) : (
-      <h1 className="text-[#FFFBEA] font-outfit sm:text-[40px] text-[56px] font-bold leading-[125%] w-full">
-        Get Help From Peers Who&apos;ve Mastered Your Course
-      </h1>
-    )
+        <h1 className="text-[#FFFBEA] font-outfit text-[56px] font-bold leading-[125%] max-w-[572px]">
+          Get Help From Peers Who&apos;ve Mastered Your Course
+        </h1>
+      ) : (
+        <h1 className="text-[#FFFBEA] font-outfit text-[37px] font-bold leading-[125%] w-full">
+          Get Help From Peers Who&apos;ve Mastered Your Courses
+        </h1>
+      )
     }
     <div className={poppins.variable}>
       <p className="text-white text-[20px] leading-[150%]">
@@ -140,7 +158,7 @@ const MainContentText = ({ isMobile }: { isMobile: boolean }) => (
       </p>
     </div>
     <div className={poppins.variable}>
-      <div className="flex flex-row flex-wrap gap-x-4">
+      <div className="flex flex-row flex-wrap gap-x-4 gap-y-4">
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLScZX8sgdf_ZIRx8ZZi09DwuRl_xJwbBifQ8jdhSuX1nvRmewA/viewform"
           target="_blank"
@@ -349,6 +367,10 @@ export default function Home() {
     // Cleanup
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
+
+  useEffect(() => {
+    console.log(isMobile);
+  }, [isMobile]);
 
   return (
     <main
